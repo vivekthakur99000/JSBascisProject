@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <h2 id="heading">Tip Calculator</h2>
+
+        <div class="input-div">
+            <input type="text" placeholder="Enter bill Amount" id="bill-amt">
+            <input type="text" placeholder="Enter percentage" id="percentage">
+            <input type="text" placeholder="Tip" id="tip" disabled>
+            <button type="submit" id="calc"  >Calculate</button>
+        </div>
+
+    </div>
+    
+</body>
+
+<script>
+
+   const billAmt = document.getElementById("bill-amt")
+   const percentage = document.getElementById("percentage")
+   const tip = document.getElementById("tip")
+   const calculate = document.getElementById("calc")
+
+
+    calculate.addEventListener('click', ()=> {
+        const bill = parseFloat(billAmt.value)
+        const per = parseFloat(percentage.value)
+
+        if (!isNaN(bill) && !isNaN(per)) {
+            const tipValue = (bill * per) / 100
+            tip.value = tipValue
+        }else{
+            tip.value = "Invalid Input"
+        }
+    })
+   
+
+    
+
+</script>
+</html>
