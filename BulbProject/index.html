@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb On and off</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <h2 id="heading">Bulb on</h2>
+
+        <div class="img-div">
+            
+
+            <img src="./on.jpeg" alt="" srcset="">
+    
+            
+        </div>
+
+        <div class="btns">
+            <button>On</button>
+            <button>Off</button>
+        </div>
+
+    </div>
+    
+</body>
+
+<script>
+
+    const heading = document.getElementById('heading');
+
+    const onBtn = document.querySelector('.btns').children[0];
+    const offBtn = document.querySelector('.btns').children[1];
+
+    const img = document.querySelector('.img-div').children[0];
+    const bulb = document.querySelector('.img-div').children[0].children[0];
+
+    onBtn.addEventListener('click', () => {
+        heading.innerHTML = 'Bulb on';
+        img.src = './on.jpeg';
+    });
+
+    offBtn.addEventListener('click', () => {
+        heading.innerHTML = 'Bulb off';
+        img.src = './off.jpeg';
+    });
+
+    
+
+</script>
+</html>
