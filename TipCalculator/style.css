@@ -15,15 +15,10 @@ body {
   height: 350px;
   background: lightblue;
   border-radius: 20px;
-
   position: absolute;
-
   top: 50%;
-
   left: 50%;
-
   transform: translate(-50%, -50%);
-  
 }
 
 #heading{

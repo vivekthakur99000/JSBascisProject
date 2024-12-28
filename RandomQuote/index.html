@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RandomQuoteGenerator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h2 id="heading">Random Quote</h2>
+
+      <div class="quote-div">
+        <h2 id="quote">
+          The magic you are looking for is in the work that you are avoiding.
+        </h2>
+        <div class="btns">
+          <button id="new">New Quote</button>
+          <button id="x">Twitter</button>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const quote = document.getElementById("quote");
+    const newQuote = document.getElementById("new");
+
+    async function getData() {
+    let apiUrl = "https://api.quotable.io/random"; // Updated API endpoint
+
+    try {
+      const response = await fetch(apiUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log(data);
+      quote.textContent = data.content; // Display the quote
+    } catch (error) {
+      console.log(error.message);
+      quote.textContent = "Failed to fetch quote. Please try again later.";
+    }
+  }
+
+  newQuote.addEventListener("click", getData);
+  </script>
+</html>
