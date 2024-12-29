@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Bg color</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main">
+
+      
+
+        <div class="input-div">
+            <h2>Random Background Color : <span id="color">#FF0000</span></h2>
+            <button id="change">Change</button>
+        </div>
+
+    </div>
+    
+</body>
+
+<script>
+
+    const change = document.getElementById('change');
+    const color = document.getElementById('color');
+
+    const RandomColor = () => {
+         const letters = '0123456789ABCDEF';
+            let color = '#';
+            for(let i = 0; i < 6; i++){
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+
+            return color;
+    }
+
+    change.addEventListener('click', () => {
+        const randomColor = RandomColor();
+        document.body.style.backgroundColor = randomColor;
+        color.textContent = randomColor;
+    });
+
+
+    
+
+
+
+   
+
+    
+
+</script>
+</html>
