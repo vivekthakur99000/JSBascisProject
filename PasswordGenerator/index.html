@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <div class="main">
+        <h2 id="heading">Password Generator</h2>
+        <div class="input-div">
+            <input type="text" placeholder="Password" id="password" disabled>
+            <div class="pswd-opt">
+                <input type="range" min="8" max="15" value="8" placeholder="Enter password length" id="length">
+                <p>Length : <span id="rangeValue"> 8 </span></p>
+                
+            </div>
+            
+            
+            <button type="submit" id="generate">Generate</button>
+        </div>
+    </div>
+    
+    
+</body>
+
+<script>
+    const lengthInput = document.getElementById("length");
+    const rangeValue = document.getElementById("rangeValue");
+
+    lengthInput.addEventListener("input", () => {
+        rangeValue.textContent = lengthInput.value;
+    });
+
+    const password = document.getElementById("password");
+    const generate = document.getElementById("generate");
+
+    generate.addEventListener('click' , () => {
+        const length = lengthInput.value;
+        const newPassword = generatePassword(length);
+        password.value = newPassword;
+    })
+
+    function generatePassword(length) {
+
+        const charSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*(){}1234567890"
+        let password = '';
+
+        for (let i = 0; i < length; i++) {
+            const randomIdx = Math.floor(Math.random() * charSet.length)
+            password += charSet[randomIdx];
+            
+        }
+
+        return password
+        
+    }
+
+
+</script>
+</html>
