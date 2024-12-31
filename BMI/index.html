@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h2>BMI Calculator</h2>
+
+      <div class="input-div">
+        <input type="text" placeholder="Weight in Kg/s" id="kg" />
+        <input type="text" placeholder="Height in CM" id="cm" />
+        <input type="text" id="bmi" disabled />
+        <button id="calc">Calculate</button>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const calc = document.getElementById("calc");
+
+    calc.addEventListener("click", () => {
+      const weight = parseFloat(document.getElementById("kg").value);
+      const height = parseFloat(document.getElementById("cm").value);
+      const bmiValue = document.getElementById("bmi");
+
+      if (!isNaN(weight) && !isNaN(height) && height > 0) {
+
+        let hcm = height / 100;
+
+      let bmi = weight / (hcm * hcm);
+
+      bmiValue.value = bmi.toFixed(2);
+        
+      }else{
+        bmiValue.value = "Invalid input"
+      }
+
+      
+    });
+  </script>
+</html>
