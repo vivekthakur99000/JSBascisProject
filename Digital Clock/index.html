@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h2>Digital Clock</h2>
+      <div class="clock">
+        <div class="block" >
+          <p id="hours">12</p>
+        </div>
+
+        <span>:</span>
+
+        <div class="block" >
+          <p id="minutes">43</p>
+        </div>
+
+        <span>:</span>
+
+        <div class="block" >
+          <p id="seconds">59</p>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+
+    const hours = document.getElementById("hours")
+    const min = document.getElementById("minutes")
+    const sec = document.getElementById("seconds")
+
+    function getTime(){
+        const time = new Date();
+        hours.textContent = time.getHours()
+        min.textContent = time.getMinutes()
+        sec.textContent = time.getSeconds()
+    }
+
+    setInterval(() => {
+        getTime()
+    }, 1000)
+
+    getTime()
+
+  </script>
+</html>
