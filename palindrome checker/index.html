@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <h1>Palindrome checker</h1>
+
+        <div class="input-div">
+
+            <input type="text" id="input" placeholder="Enter a string">
+
+            <p id="palindrome"><span>aba</span> is Palindrome.</p>
+
+            <button id="check">check</button>
+
+        </div>
+
+    </div>
+    
+</body>
+
+    <script>
+
+        const input = document.getElementById("input")
+        const check = document.getElementById("check")
+        const palindrome = document.getElementById("palindrome")
+
+        function checkPalindrome(){
+            const text = input.value
+            const reversed = text.split("").reverse().join("")
+            if(text === reversed){
+                palindrome.textContent = `${text} is Palindrome.`
+                }else{
+                    palindrome.textContent = `${text} is not Palindrome.`
+                }
+        }
+
+        check.addEventListener('click', checkPalindrome)
+
+    </script>
+</html>
