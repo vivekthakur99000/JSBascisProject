@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the Number</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h2>Guess the Number</h2>
+
+      <div class="input-number">
+        <p>Guess the between 1 to 100</p>
+        <input
+          type="number"
+          id="guess"
+          placeholder="Enter your guess."
+          min="1"
+        />
+        <p id="right">Lets play the game.</p>
+        <button class="btn">Guess</button>
+      </div>
+    </div>
+
+    <script>
+      let count = 1;
+      let number = Math.floor(Math.random() * 100) + 1;
+
+      let guess = document.getElementById("guess");
+      let right = document.getElementById("right");
+      let btn = document.getElementById("btn");
+
+      const playGame = () => {
+        let guessValue = parseInt(guess.value);
+
+        if (guessValue === number) {
+          right.textContent = `You guessed it in ${count} attempts.`;
+        } else if (guessValue < number) {
+          right.textContent = `Too low, try again.`;
+          count++;
+        } else if (guessValue > number) {
+          right.textContent = `Too high, try again.`;
+          count++;
+        }
+      };
+
+      btn.addEventListener("click", playGame);
+    </script>
+  </body>
+</html>
