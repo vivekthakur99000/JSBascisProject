@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100%;
+    width: 100%;
+    background: #232323;
+  }
+  
+  .main {
+    width: 550px;
+    height: 350px;
+    background: lightblue;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .word-count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-direction: column;
+  }
+
+  input{
+    width: 420px;
+    height: 65px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding-inline: 45px;
+  }
+
+  p{
+    font-size: 18px;
+    color: #000;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }

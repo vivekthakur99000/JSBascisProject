@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Count</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="main">
+      <h2>Word Count</h2>
+
+      <div class="word-count">
+        <input type="text" id="textarea" />
+        <p id="count">You wrote 0 words.</p>
+      </div>
+    </div>
+  </body>
+
+  <script>
+
+    const textarea = document.getElementById("textarea")
+    const count = document.getElementById("count")
+
+    textarea.addEventListener("input", () =>  {
+        const text = textarea.value.trim()
+        const words = text.split(" ")
+        const wordCount = words.length
+        count.textContent = `You wrote ${wordCount} words.`
+    })
+
+
+
+  </script>
+
+</html>
